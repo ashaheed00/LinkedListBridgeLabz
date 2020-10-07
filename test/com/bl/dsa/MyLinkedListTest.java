@@ -2,65 +2,83 @@ package com.bl.dsa;
 
 import static org.junit.Assert.*;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class MyLinkedListTest {
 
+	@Ignore
 	@Test
 	public void given3NumbersWhenAddedToLinkedListShouldBeAddedToTop() {
 		MyNode<Integer> myFirstNode = new MyNode<>(70);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
-		MyNode<Integer> myThreeNode = new MyNode<>(56);
+		MyNode<Integer> myThirdNode = new MyNode<>(56);
 		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.add(myFirstNode);
 		myLinkedList.add(mySecondNode);
-		myLinkedList.add(myThreeNode);
+		myLinkedList.add(myThirdNode);
 		myLinkedList.print();
-		boolean result = myLinkedList.head.equals(myThreeNode) && myLinkedList.head.getNext().equals(mySecondNode)
+		boolean result = myLinkedList.head.equals(myThirdNode) && myLinkedList.head.getNext().equals(mySecondNode)
 				&& myLinkedList.tail.equals(myFirstNode);
 		assertTrue(result);
 	}
 
+	@Ignore
 	@Test
 	public void given3NumbersWhenAppendedShouldBeAddedToLast() {
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
-		MyNode<Integer> myThreeNode = new MyNode<>(70);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
 		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.append(myFirstNode);
 		myLinkedList.append(mySecondNode);
-		myLinkedList.append(myThreeNode);
+		myLinkedList.append(myThirdNode);
 		myLinkedList.print();
 		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
-				&& myLinkedList.tail.equals(myThreeNode);
+				&& myLinkedList.tail.equals(myThirdNode);
 		assertTrue(result);
 	}
 
+	@Ignore
 	@Test
 	public void given3NumbersWhenInsertingSecondInBetweenShouldPassLinkedListResult() {
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
-		MyNode<Integer> myThreeNode = new MyNode<>(70);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
 		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.add(myFirstNode);
-		myLinkedList.append(myThreeNode);
+		myLinkedList.append(myThirdNode);
 		myLinkedList.insert(myFirstNode, mySecondNode);
 		myLinkedList.print();
 		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
-				&& myLinkedList.tail.equals(myThreeNode);
+				&& myLinkedList.tail.equals(myThirdNode);
 		assertTrue(result);
 	}
 
+	@Ignore
 	@Test
 	public void givenFirstElementWhenDeletedShouldPassLinkedListResult() {
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
-		MyNode<Integer> myThreeNode = new MyNode<>(70);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
 		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.add(myFirstNode);
 		myLinkedList.append(mySecondNode);
-		myLinkedList.append(myThreeNode);
+		myLinkedList.append(myThirdNode);
 		assertEquals(myFirstNode, myLinkedList.pop());
+		myLinkedList.print();
+	}
+
+	@Test
+	public void givenLastElementWhenDeletedShouldPassLinkedListResult() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		assertEquals(myThirdNode, myLinkedList.popLast());
 		myLinkedList.print();
 	}
 

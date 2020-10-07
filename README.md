@@ -1,3 +1,3 @@
 # LinkedList BridgeLabz
-## Version UC5
-#### Ability to delete the first element (pop) 
+## Version UC6
+#### Ability to delete the last element
