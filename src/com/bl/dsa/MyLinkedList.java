@@ -21,6 +21,17 @@ public class MyLinkedList<K> {
 		}
 	}
 
+	public void append(INode<K> myNode) {
+		if (this.head == null)
+			this.head = myNode;
+		if (this.tail == null) {
+			this.tail = myNode;
+		} else {
+			this.tail.setNext(myNode);
+			this.tail = myNode;
+		}
+	}
+
 	public void print() {
 		StringBuffer myNodes = new StringBuffer();
 		INode<K> tempNode = head;

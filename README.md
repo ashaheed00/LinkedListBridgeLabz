@@ -1,3 +1,3 @@
 # LinkedList BridgeLabz
-## Version UC2
-#### Ability to add to top (push) 
+## Version UC3
+#### Ability to append to last 
