@@ -1,3 +1,3 @@
 # LinkedList BridgeLabz
-## Version UC1
-#### Create a simple LinkedList 
+## Version UC2
+#### Ability to add to top (push) 

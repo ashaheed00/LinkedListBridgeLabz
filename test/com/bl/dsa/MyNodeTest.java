@@ -10,10 +10,11 @@ public class MyNodeTest {
 	public void givenThreeNumbersToLinkedListTest() {
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
 		MyNode<Integer> mySecondNode = new MyNode<>(30);
-		MyNode<Integer> myThreeNode = new MyNode<>(70);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+
 		myFirstNode.setNext(mySecondNode);
-		mySecondNode.setNext(myThreeNode);
-		boolean result = myFirstNode.getNext().equals(mySecondNode) && mySecondNode.getNext().equals(myThreeNode);
+		mySecondNode.setNext(myThirdNode);
+		boolean result = myFirstNode.getNext().equals(mySecondNode) && mySecondNode.getNext().equals(myThirdNode);
 		assertTrue(result);
 	}
 
