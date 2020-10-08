@@ -1,3 +1,3 @@
 # LinkedList BridgeLabz
-## Version UC6
-#### Ability to delete the last element
+## Version UC7
+#### Ability to search node through the list

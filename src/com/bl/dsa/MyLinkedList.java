@@ -55,12 +55,22 @@ public class MyLinkedList<K> {
 		return tempNode;
 	}
 
+	public INode<K> search(K key) {
+		INode<K> tempNode = head;
+		while (tempNode != null) {
+			if (tempNode.getKey() == key)
+				return tempNode;
+			tempNode = tempNode.getNext();
+		}
+		return null;
+	}
+
 	public void print() {
 		StringBuffer myNodes = new StringBuffer();
 		INode<K> tempNode = head;
 		while (tempNode.getNext() != null) {
 			myNodes.append(tempNode.getKey());
-			if (!tempNode.equals(tail))
+			if (tempNode != tail)
 				myNodes.append("->");
 			tempNode = tempNode.getNext();
 		}
