@@ -68,8 +68,28 @@ public class MyLinkedList<K> {
 	// Overloaded insert method to insert element using keys
 	public void insert(K prevKey, K newKey) {
 		INode<K> prevNode = search(prevKey);
-		MyNode<K> newNode = new MyNode<>(newKey);
+		INode<K> newNode = new MyNode<>(newKey);
 		insert(prevNode, newNode);
+	}
+
+	public void delete(K key) {
+		INode<K> nodeToDelete = search(key);
+		INode<K> nextNode = nodeToDelete.getNext();
+		INode<K> prevNode = head;
+		while (!prevNode.getNext().equals(nodeToDelete)) {
+			prevNode = prevNode.getNext();
+		}
+		prevNode.setNext(nextNode);
+	}
+
+	public int size() {
+		int size = 0;
+		INode<K> tempNode = head;
+		while (!tempNode.equals(tail)) {
+			tempNode = tempNode.getNext();
+			size++;
+		}
+		return size + 1;
 	}
 
 	public void print() {

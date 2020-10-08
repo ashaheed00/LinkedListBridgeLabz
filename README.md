@@ -1,3 +1,3 @@
 # LinkedList BridgeLabz
-## Version UC8
-#### Ability to insert element only providing key
+## Version UC9
+#### Ability to delete element using keys and show size
