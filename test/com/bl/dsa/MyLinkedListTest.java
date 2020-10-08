@@ -83,6 +83,7 @@ public class MyLinkedListTest {
 		myLinkedList.print();
 	}
 
+	@Ignore
 	@Test
 	public void given3NumberWhenSearchShouldPassLinkedListResult() {
 		MyNode<Integer> myFirstNode = new MyNode<>(56);
@@ -94,6 +95,22 @@ public class MyLinkedListTest {
 		myLinkedList.append(myThirdNode);
 		assertEquals(mySecondNode, myLinkedList.search(30));
 		myLinkedList.print();
+	}
+
+	@Test
+	public void given3NumbersWhenInsertingUsingKeyInBetweenShouldPassLinkedListResult() {
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		myLinkedList.insert(30, 40);
+		myLinkedList.print();
+		boolean result = myLinkedList.head.equals(myFirstNode) && myLinkedList.head.getNext().equals(mySecondNode)
+				&& myLinkedList.tail.equals(myThirdNode) && myLinkedList.head.getNext().getNext().getKey().equals(40);
+		assertTrue(result);
 	}
 
 }
